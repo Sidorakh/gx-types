@@ -1,17 +1,18 @@
 parts = [
-    "ev_async_system_event", ev_async_system_event,
-    "ev_async_push_notification", ev_async_push_notification,
-    "ev_async_web_iap", ev_async_web_iap,
-    "ev_async_social", ev_async_social,
-    "ev_async_web", ev_async_web,
-    "ev_async_web_cloud", ev_async_web_cloud,
-    "ev_async_web_image_load", ev_async_web_image_load,
-    "ev_async_web_networking", ev_async_web_networking,
-    "ev_async_web_steam", ev_async_web_steam,
-    "ev_async_audio_playback", ev_async_audio_playback,
-    "ev_async_audio_recording", ev_async_audio_recording,
-    "ev_async_dialog", ev_async_dialog,
-    "ev_async_save_load", ev_async_save_load
+    "asset_unknown", asset_unknown,
+    "asset_sprite", asset_sprite,
+    "asset_object", asset_object,
+    "asset_script", asset_script,
+    "asset_room", asset_room,
+    "asset_path", asset_path,
+    "asset_sound", asset_sound,
+    "asset_tiles", asset_tiles,
+    "asset_timeline", asset_timeline,
+    "asset_font", asset_font,
+    "asset_shader", asset_shader,
+    "asset_sequence", asset_sequence,
+    "asset_animationcurve", asset_animationcurve,
+    "asset_particlesystem", asset_particlesystem
 ];
 
 
@@ -23,5 +24,5 @@ for (var i=0;i<array_length(parts);i+=2) {
 
 gxtypes_test();
 
-gxtypes_test_map();
+gxtypes_test_map(application_surface);
 

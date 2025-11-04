@@ -11,6 +11,7 @@ declare global {
         GMMap,
         GMList
         GMEvents,
+        GMAssets,
     }
 }
 

@@ -3,7 +3,8 @@ import GMBuffer, { BufferType } from "./GMBuffer";
 import GMJSON from "./GMJSON";
 import GMMap from "./GMMap";
 import GMList from "./GMList";
-import GMEvents, {AsyncEvent} from "./GMEvents";
+import GMEvents, { AsyncEvent } from "./GMEvents";
+import GMAssets, { AssetType } from "./GMAssets";
 
 // @ts-ignore
 window.gxtypes_init = async function() {
@@ -16,6 +17,7 @@ window.gxtypes_init = async function() {
     GMMap.init();
     GMList.init();
     GMEvents.init();
+    GMAssets.init();
 
     window.GMBuffer = GMBuffer;
     window.GMJSON = GMJSON;
@@ -54,6 +56,7 @@ window.gxtypes_test = function() {
 window.gxtypes_testmap = function(ptr: string) {
     //const buff = GMBuffer.from(ptr);
     //console.log(`Address: ${buff.get_address()}\nAlignment:${buff.get_alignment()}\nType: ${buff.get_type()}`);
+    /*
     const map = new GMMap();
     map.set("id","hello world");
     map.set("what","social event");
@@ -61,4 +64,5 @@ window.gxtypes_testmap = function(ptr: string) {
     console.log(map);
     console.log(AsyncEvent.Social);
     GMEvents.perform_async(AsyncEvent.Social,map);
+    */
 }
