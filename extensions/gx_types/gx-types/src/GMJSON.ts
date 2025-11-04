@@ -19,11 +19,11 @@ export default class GMJSON {
     }
     static ds = {
         stringify(ds: GMMap, prettify=false){
-            return GMJSON.InternalFunctions.json_encode(undefined, undefined, ds.ptr, prettify);
+            return GMJSON.InternalFunctions.json_encode(ds.ptr, prettify);
         },
         parse(string: string){
             const map = new GMMap(false);
-            map.ptr = GMJSON.InternalFunctions.json_decode(undefined, undefined, string);
+            map.ptr = GMJSON.InternalFunctions.json_decode(string);
             return map;
         },
     }

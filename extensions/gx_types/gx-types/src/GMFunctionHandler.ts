@@ -9,6 +9,10 @@ export function fetch_gml_functions() {
 
 function noop() {};
 
+function call_wrapper(fn:Function, ...args:any[]) {
+    return fn(undefined,undefined,...args);
+}
+
 export function get_function(name: string) {
     if (gmfn == null) {
         return noop;
@@ -16,5 +20,5 @@ export function get_function(name: string) {
     if (gmfn[name] == undefined) {
         throw `Function ${name} not found`;
     }
-    return gmfn[name];
+    return (...args:any[])=>call_wrapper(gmfn![name]!,...args);
 }

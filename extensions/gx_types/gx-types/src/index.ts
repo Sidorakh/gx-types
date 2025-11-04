@@ -1,7 +1,10 @@
 import { fetch_gml_functions } from "./GMFunctionHandler";
-import GMBuffer, { BufferTypes } from "./GMBuffer";
+import GMBuffer, { BufferType } from "./GMBuffer";
 import GMJSON from "./GMJSON";
 import GMMap from "./GMMap";
+import GMList from "./GMList";
+import GMEvents, {AsyncEvent} from "./GMEvents";
+
 // @ts-ignore
 window.gxtypes_init = async function() {
     
@@ -11,17 +14,21 @@ window.gxtypes_init = async function() {
     GMBuffer.init();
     GMJSON.init();
     GMMap.init();
+    GMList.init();
+    GMEvents.init();
 
     window.GMBuffer = GMBuffer;
     window.GMJSON = GMJSON;
     window.GMMap = GMMap;
+    window.GMList = GMList;
+    window.GMEvents = GMEvents;
 
 }
 
 // @ts-ignore
 window.gxtypes_test = function() {
     // @ts-ignore
-    const buff = new GMBuffer(128,BufferTypes.Fixed,1);
+    const buff = new GMBuffer(128,BufferType.Fixed,1);
     const map = new GMMap();
     map.set('test',true);
     map.set('test123',false);
@@ -39,11 +46,19 @@ window.gxtypes_test = function() {
     console.log(GMJSON.ds.stringify(map,true));
     console.log(map.keys_to_array());
     console.log(map.values_to_array());
+    console.log(typeof(buff.get_address()))
+    console.log(buff.get_address())
 }
 
 // @ts-ignore
 window.gxtypes_testmap = function(ptr: string) {
-    // @ts-ignore
-    const map = GMMap.from(ptr);
-    console.log(map.find_value("struct"));
+    //const buff = GMBuffer.from(ptr);
+    //console.log(`Address: ${buff.get_address()}\nAlignment:${buff.get_alignment()}\nType: ${buff.get_type()}`);
+    const map = new GMMap();
+    map.set("id","hello world");
+    map.set("what","social event");
+    map.set("yup","blah");
+    console.log(map);
+    console.log(AsyncEvent.Social);
+    GMEvents.perform_async(AsyncEvent.Social,map);
 }
