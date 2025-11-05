@@ -5,6 +5,7 @@ import GMMap from "./GMMap";
 import GMList from "./GMList";
 import GMEvents, { AsyncEvent } from "./GMEvents";
 import GMAssets, { AssetType } from "./GMAssets";
+import GMSurface from "./GMSurface";
 
 // @ts-ignore
 window.gxtypes_init = async function() {
@@ -18,13 +19,14 @@ window.gxtypes_init = async function() {
     GMList.init();
     GMEvents.init();
     GMAssets.init();
+    GMSurface.init();
 
     window.GMBuffer = GMBuffer;
     window.GMJSON = GMJSON;
     window.GMMap = GMMap;
     window.GMList = GMList;
     window.GMEvents = GMEvents;
-
+    window.GMSurface = GMSurface;
 }
 
 // @ts-ignore
@@ -65,4 +67,8 @@ window.gxtypes_testmap = function(ptr: string) {
     console.log(AsyncEvent.Social);
     GMEvents.perform_async(AsyncEvent.Social,map);
     */
+   const surf = GMSurface.from(ptr);
+   console.log(ptr);
+   console.log(surf.get_texture());
+   console.log(surf.get_texture_depth());
 }
