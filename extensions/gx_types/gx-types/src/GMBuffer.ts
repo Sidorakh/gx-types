@@ -197,10 +197,10 @@ export default class GMBuffer {
     get_size() {
         return GMBuffer.InternalFunctions.buffer_get_size(this.ptr) as number;
     }
-    get_surface(surface: string, offset: number){
+    copy_from_surface(surface: string, offset: number){
         return GMBuffer.InternalFunctions.buffer_get_surface(this.ptr,surface,offset);
     }
-    set_surface(surface: string, offset: number) {
+    copy_to_surface(surface: string, offset: number) {
         return GMBuffer.InternalFunctions.buffer_set_surface(this.ptr,surface,offset);
     }
     resize(new_size: number) {

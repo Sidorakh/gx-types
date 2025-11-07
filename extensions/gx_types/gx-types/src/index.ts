@@ -1,14 +1,18 @@
 import { fetch_gml_functions } from "./GMFunctionHandler";
-import GMBuffer, { BufferType } from "./GMBuffer";
+import GMBuffer, { BufferType, DataType, SeekType } from "./GMBuffer";
 import GMJSON from "./GMJSON";
 import GMMap from "./GMMap";
 import GMList from "./GMList";
 import GMEvents, { AsyncEvent } from "./GMEvents";
 import GMAssets, { AssetType } from "./GMAssets";
 import GMSurface from "./GMSurface";
+import GMDraw from "./GMDraw";
+import GMColor, {Color} from "./GMColor";
 
-// @ts-ignore
-window.gxtypes_init = async function() {
+
+
+
+window.gxtypes_init = function() {
     
     const out = fetch_gml_functions();
     console.log(out)
@@ -20,6 +24,11 @@ window.gxtypes_init = async function() {
     GMEvents.init();
     GMAssets.init();
     GMSurface.init();
+    GMDraw.init();
+    GMColor.init();
+
+
+
 
     window.GMBuffer = GMBuffer;
     window.GMJSON = GMJSON;
@@ -27,6 +36,8 @@ window.gxtypes_init = async function() {
     window.GMList = GMList;
     window.GMEvents = GMEvents;
     window.GMSurface = GMSurface;
+    window.GMDraw = GMDraw;
+    window.GMColor = GMColor;
 }
 
 // @ts-ignore
@@ -68,7 +79,20 @@ window.gxtypes_testmap = function(ptr: string) {
     GMEvents.perform_async(AsyncEvent.Social,map);
     */
    const surf = GMSurface.from(ptr);
-   console.log(ptr);
-   console.log(surf.get_texture());
-   console.log(surf.get_texture_depth());
+   // const buff = new GMBuffer(64*64*4,BufferType.Fixed,1);
+   // buff.seek(SeekType.Start,0);
+   // buff.write(DataType.String,"Hi world");
+   // buff.seek(SeekType.Start,0);
+   // console.log(`Read: ${buff.read(DataType.String)}`);
+   // buff.get_surface(surf.ptr!,0);
+   // buff.seek(SeekType.Start,0);
+   // console.log(`Read: ${buff.read(DataType.U8)}`);
+   
+    
+   surf.set_target();
+   GMDraw.clear_alpha(GMColor.merge_color(Color.Red,Color.Blue,0.5),1)
+   GMDraw.set_color(Color.Black);
+   GMDraw.arrow(16,16,48,48,5);
+   surf.reset_target();
+
 }

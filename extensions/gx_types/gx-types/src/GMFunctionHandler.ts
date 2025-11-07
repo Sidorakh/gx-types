@@ -10,7 +10,8 @@ export function fetch_gml_functions() {
 function noop() {};
 
 function call_wrapper(fn:Function, ...args:any[]) {
-    return fn(undefined,undefined,...args);
+    const out = fn(undefined,undefined,...args);
+    return out;
 }
 
 export function get_function(name: string) {

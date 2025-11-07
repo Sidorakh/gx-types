@@ -15,4 +15,5 @@ for (var i=0;i<array_length(parts);i+=2) {
 }
 
 //gxtypes_test();
+surf = -1;
 
