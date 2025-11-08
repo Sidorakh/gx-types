@@ -1,0 +1,3 @@
+- [**Download the latest release**](https://github.com/Sidorakh/gx-types/releases)
+- [**Report an issue**](https://github.com/Sidorakh/gx-types/issues)
+- [**Support me**](https://paypal.me/sidorakh)
