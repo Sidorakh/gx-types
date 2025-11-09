@@ -4,3 +4,6 @@
 **API Reference**
 - [GMBuffer](GMBuffer.md)
 - [GMMap](GMMap.md)
+- [GMSurface](GMSurface.md)
+- [GMColor](GMColor.md)
+- [GMAssets](GMAssets.md)

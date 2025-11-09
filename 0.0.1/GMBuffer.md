@@ -90,7 +90,7 @@ Arguments:
 | - | - | - | 
 | buffer | string | Buffer reference |
 
-Returns; GMBuffer
+Returns: GMBuffer
 
 Returns a new GMBuffer wrapped around the given GameMaker Buffer reference
 
@@ -490,26 +490,26 @@ Wraps [`buffer_get_used_size`](https://manual.gamemaker.io/monthly/en/GameMaker_
 
 ### copy_from_surface
 
-`copy_from_surface(surface: string, offset: number): void`
+`copy_from_surface(surface: GMSurface, offset: number): void`
 
 Arguments:
 
 | Argument | Type | Description |
 | - | - | - | 
-| surface | string | Surface to copy data from |
+| surface | [GMSurface](GMSurface) | Surface to copy data from |
 | offset | number | Position in surface to start writing to |
 
 Returns: N/A
 
 Wraps [`buffer_get_surface`](https://manual.gamemaker.io/lts/en/GameMaker_Language/GML_Reference/Buffers/buffer_get_surface.htm)
 
-### copy_to_surface(surface: stirng, offset: number): void
+### copy_to_surface(surface: GMSurface, offset: number): void
 
 Arguments:
 
 | Argument | Type | Description |
 | - | - | - | 
-| surface | string | Surface to copy data to |
+| surface | [GMSurface](GMSurface) | Surface to copy data to |
 | offset | number | Position in buffer to read data from |
 
 Returns: N/A
