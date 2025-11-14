@@ -19,8 +19,15 @@
 
 1. Follow initial setup instructions for this extension
 2. Create an extension with a JavaScript file
-3. Use the classes on the Window object
+3. Use the classes on the Window object in your own extensions
 
+## To modify the extension
+
+To build the extension manually
+1. Ensure you have Node.JS and NPM installed
+2. Open a terminal in the `extensions/gx-types/gx-types` directory
+3. Make changes as needed to the ./ts files in the ./src directory
+4. Run `npm run build` to build the extension when you're done
 
 ## Important information
 
