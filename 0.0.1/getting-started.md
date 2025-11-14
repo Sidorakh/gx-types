@@ -25,7 +25,7 @@
 
 To build the extension manually
 1. Ensure you have Node.JS and NPM installed
-2. Open a terminal in the `extensions/gx-types/gx-types` directory
+2. Open a terminal in the `extensions/gx_types/gx-types` directory
 3. Make changes as needed to the ./ts files in the ./src directory
 4. Run `npm run build` to build the extension when you're done
 
