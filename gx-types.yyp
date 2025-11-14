@@ -13,6 +13,7 @@
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"GX Types","folderPath":"folders/GX Types.yy","name":"GX Types","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Notes","folderPath":"folders/Notes.yy","name":"Notes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Particle Systems","folderPath":"folders/Particle Systems.yy","name":"Particle Systems","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -36,8 +37,9 @@
   "name":"gx-types",
   "resources":[
     {"id":{"name":"gx_types","path":"extensions/gx_types/gx_types.yy",},},
-    {"id":{"name":"obj_test","path":"objects/obj_test/obj_test.yy",},},
+    {"id":{"name":"obj_gx_types_example","path":"objects/obj_gx_types_example/obj_gx_types_example.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"spr_test","path":"sprites/spr_test/spr_test.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

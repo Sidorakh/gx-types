@@ -72,7 +72,7 @@ export default class GMMap {
     }
     
     exists(key: MapKey){
-        return GMMap.InternalFunctions.ds_map_exists(this.ptr, key);
+        return !!GMMap.InternalFunctions.ds_map_exists(this.ptr, key);
     }
     destroy(){
         const p = this.ptr;
@@ -89,7 +89,7 @@ export default class GMMap {
         return GMMap.InternalFunctions.ds_map_copy(this.ptr, source);
     }
     replace(key: MapKey, value: any){
-        return GMMap.InternalFunctions.ds_map_replace(this.ptr, key, value);
+        return !!GMMap.InternalFunctions.ds_map_replace(this.ptr, key, value);
     }
     delete(key: MapKey) {
         return GMMap.InternalFunctions.ds_map_delete(this.ptr, key);
@@ -101,13 +101,13 @@ export default class GMMap {
         return GMMap.InternalFunctions.ds_map_size(this.ptr) as number;
     }
     find_first() {
-        return GMMap.InternalFunctions.ds_map_find_first(this.ptr);
+        return GMMap.InternalFunctions.ds_map_find_first(this.ptr) as string|undefined;
     }
     find_last() {
-        return GMMap.InternalFunctions.ds_map_find_last(this.ptr);
+        return GMMap.InternalFunctions.ds_map_find_last(this.ptr) as string|undefined;
     }
     find_next(key: MapKey) {
-        return GMMap.InternalFunctions.ds_map_find_next(this.ptr, key);
+        return GMMap.InternalFunctions.ds_map_find_next(this.ptr, key) as string|undefined;
     }
     find_previous(key: MapKey) {
         return GMMap.InternalFunctions.ds_map_find_previous(this.ptr, key);
@@ -115,8 +115,8 @@ export default class GMMap {
     find_value(key: MapKey) {
         return GMMap.InternalFunctions.ds_map_find_value(this.ptr, key);
     }
-    keys_to_array(): ()=>MapKey[] {
-        return GMMap.InternalFunctions.ds_map_keys_to_array(this.ptr);
+    keys_to_array(){
+        return GMMap.InternalFunctions.ds_map_keys_to_array(this.ptr) as MapKey[];
     }
     values_to_array(): ()=>any[] {
         return GMMap.InternalFunctions.ds_map_values_to_array(this.ptr);

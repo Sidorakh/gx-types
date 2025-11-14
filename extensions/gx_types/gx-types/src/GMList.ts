@@ -39,8 +39,8 @@ export default class GMList {
         GMList.InternalFunctions = get_internal_functions();
     }
     static read(string: string, legacy=false){
-        const list = new GMList(false);
-        list.ptr = GMList.InternalFunctions.ds_list_read(string,legacy);
+        const list = new GMList();
+        GMList.InternalFunctions.ds_list_read(list.ptr,string,legacy);
         return list;
     }
     destroy() {

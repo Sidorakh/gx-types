@@ -62,6 +62,7 @@ function get_internal_functions() {
         buffer_get_alignment: get_function("buffer_get_alignment"),
         buffer_get_address: get_function("buffer_get_address"),
         buffer_get_size: get_function("buffer_get_size"),
+        buffer_get_used_size: get_function("buffer_get_used_size"),
         buffer_get_surface: get_function("buffer_get_surface"),
         buffer_set_surface: get_function("buffer_set_surface"),
         buffer_resize: get_function("buffer_resize"),
@@ -106,7 +107,7 @@ export default class GMBuffer {
     }
 
     exists() {
-        return this.ptr != null && GMBuffer.InternalFunctions.buffer_exists(this.ptr);
+        return this.ptr != null && !!GMBuffer.InternalFunctions.buffer_exists(this.ptr);
     }
     delete(){
         const p = this.ptr;
@@ -161,8 +162,8 @@ export default class GMBuffer {
     load_async(fname: string, offset: number, size: number) {
         return GMBuffer.InternalFunctions.buffer_load_async(this.ptr,fname,offset,size)
     }
-    load_partial(fname: string, source_offset: number, length: number, dest_offset: number) {
-        return GMBuffer.InternalFunctions.buffer_load_partial(this.ptr,fname,source_offset,length,dest_offset);
+    load_partial(fname: string, source_offset: number, size: number, dest_offset: number) {
+        return GMBuffer.InternalFunctions.buffer_load_partial(this.ptr,fname,source_offset,size,dest_offset);
     }
     compress(offset: number,size: number) {
         return GMBuffer.from(GMBuffer.InternalFunctions.buffer_compress(this.ptr,offset,size));
@@ -195,6 +196,9 @@ export default class GMBuffer {
         return GMBuffer.InternalFunctions.buffer_get_address(this.ptr) as string;
     }
     get_size() {
+        return GMBuffer.InternalFunctions.buffer_get_size(this.ptr) as number;
+    }
+    get_used_size() {
         return GMBuffer.InternalFunctions.buffer_get_size(this.ptr) as number;
     }
     copy_from_surface(surface: string, offset: number){

@@ -62,7 +62,7 @@ export default class GMAssets {
     static has_any_tag(ref: string, tags: string|string[], type?: AssetType) {
         return !!GMAssets.InternalFunctions.asset_has_any_tag(ref,tags,type);
     }
-    static asset_clear_tags(ref: string, type?: AssetType) {
+    static clear_tags(ref: string, type?: AssetType) {
         return !!GMAssets.InternalFunctions.asset_clear_tags(ref,type);
     }
     static tag_get_assets(tags: string|string[]) {

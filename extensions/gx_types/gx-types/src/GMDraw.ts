@@ -28,16 +28,17 @@ function get_internal_functions() {
         draw_set_alpha: get_function("draw_set_alpha"),
         draw_set_colour: get_function("draw_set_colour"),
 
-        colour_get_blue: get_function("colour_get_blue"),
-        colour_get_green: get_function("colour_get_green"),
-        colour_get_red: get_function("colour_get_red"),
-        colour_get_hue: get_function("colour_get_hue"),
-        colour_get_saturation: get_function("colour_get_saturation"),
-        colour_get_value: get_function("colour_get_value"),
         draw_getpixel: get_function("draw_getpixel"),
         draw_getpixel_ext: get_function("draw_getpixel_ext"),
         draw_get_colour: get_function("draw_get_colour"),
         draw_get_alpha: get_function("draw_get_alpha"),
+
+        draw_enable_swf_aa: get_function("draw_enable_swf_aa"),
+        draw_set_swf_aa_level: get_function("draw_set_swf_aa_level"),
+        draw_get_swf_aa_level: get_function("draw_get_swf_aa_level"),
+        draw_enable_svg_aa: get_function("draw_enable_svg_aa"),
+        draw_set_svg_aa_level: get_function("draw_set_svg_aa_level"),
+        draw_get_svg_aa_level: get_function("draw_get_svg_aa_level"),
     };
 }
 
@@ -67,7 +68,7 @@ export default class GMDraw {
     static line_color(x1: number,y1: number,x2: number,y2: number,col1: number, col2: number) {
         return GMDraw.InternalFunctions.draw_line_colour(x1,y1,x2,y2,col1,col2);
     }
-    line_width(x1: number, y1: number, x2: number, y2: number, width: number) {
+    static line_width(x1: number, y1: number, x2: number, y2: number, width: number) {
         return GMDraw.InternalFunctions.draw_line_width(x1,y1,x2,y2,width);
     }
     static line_width_color(x1: number, y1: number, x2: number, y2: number, width: number, col1: number, col2: number) {
@@ -95,7 +96,7 @@ export default class GMDraw {
         return GMDraw.InternalFunctions.draw_roundrect_ext(x1,y1,x2,y2,x_radius,y_radius,outline);
     }
     static rounded_rectangle_color_ext(x1:number, y1: number, x2: number, y2: number, x_radius: number, y_radius: number, col1: number, col2: number, outline: boolean) {
-        return GMDraw.InternalFunctions.draw_roundrect_ext(x1,y1,x2,y2,x_radius,y_radius,col1,col2,outline);
+        return GMDraw.InternalFunctions.draw_roundrect_colour_ext(x1,y1,x2,y2,x_radius,y_radius,col1,col2,outline);
     }
     static triangle(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, outline: boolean){
         return GMDraw.InternalFunctions.draw_triangle(x1,y1,x2,y2,x3,y3,outline);
@@ -104,36 +105,17 @@ export default class GMDraw {
         return GMDraw.InternalFunctions.draw_triangle(x1,y1,x2,y2,x3,y3,col1,col2,col3,outline);
     }
 
-    static set_color(col: number) {
-        return GMDraw.InternalFunctions.draw_set_colour(col);
-    }
-    static set_alpha(alpha: number) {
-        return GMDraw.InternalFunctions.draw_set_alpha(alpha);
-    }
     static clear(col: number) {
         return GMDraw.InternalFunctions.draw_clear(col);
     }
     static clear_alpha(col: number, alpha: number) {
         return GMDraw.InternalFunctions.draw_clear_alpha(col, alpha);
     }
-
-    static get_blue(col: number) {
-        return GMDraw.InternalFunctions.colour_get_blue(col) as number;
+    static set_alpha(alpha: number) {
+        return GMDraw.InternalFunctions.draw_set_alpha(alpha);
     }
-    static get_green(col: number) {
-        return GMDraw.InternalFunctions.colour_get_green(col) as number;
-    }
-    static get_red(col: number) {
-        return GMDraw.InternalFunctions.colour_get_red(col) as number;
-    }
-    static get_hue(col: number) {
-        return GMDraw.InternalFunctions.colour_get_hue(col) as number;
-    }
-    static get_saturation(col: number) {
-        return GMDraw.InternalFunctions.colour_get_saturation(col) as number;
-    }
-    static get_value(col: number) {
-        return GMDraw.InternalFunctions.colour_get_value(col) as number;
+    static set_color(col: number) {
+        return GMDraw.InternalFunctions.draw_set_colour(col);
     }
 
     static getpixel(x: number, y: number) {
@@ -142,4 +124,31 @@ export default class GMDraw {
     static getpixel_ext(x: number, y: number) {
         return GMDraw.InternalFunctions.draw_getpixel_ext(x,y) as number;
     }
+    static get_color() {
+        return GMDraw.InternalFunctions.draw_get_colour() as number;
+    }
+    static get_alpha() {
+        return GMDraw.InternalFunctions.draw_get_alpha() as number;
+    }
+
+    static enable_swf_aa(enable: boolean) {
+        return GMDraw.InternalFunctions.draw_enable_swf_aa(enable);
+    }
+    static set_swf_aa_level(level: number) {
+        return GMDraw.InternalFunctions.draw_set_swf_aa_level(level);
+    }
+    static get_swf_aa_level() {
+        return GMDraw.InternalFunctions.draw_get_svg_aa_level() as number;
+    }
+
+    static enable_svg_aa(enable: boolean) {
+        return GMDraw.InternalFunctions.draw_enable_svg_aa(enable);
+    }
+    static set_svg_aa_level(level: number) {
+        return GMDraw.InternalFunctions.draw_set_svg_aa_level(level);
+    }
+    static get_svg_aa_level() {
+        return GMDraw.InternalFunctions.draw_get_svg_aa_level() as number;
+    }
+
 }

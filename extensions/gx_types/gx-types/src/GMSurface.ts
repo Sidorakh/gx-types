@@ -86,10 +86,10 @@ export default class GMSurface {
         return GMSurface.InternalFunctions.surface_resize(this.ptr,w,h);
     }
     set_target() {
-        return GMSurface.InternalFunctions.surface_set_target(this.ptr);
+        return !!GMSurface.InternalFunctions.surface_set_target(this.ptr);
     }
     set_target_ext(render_target: 0|1|2|3) {
-        return GMSurface.InternalFunctions.surface_get_target_ext(render_target,this.ptr);
+        return !!GMSurface.InternalFunctions.surface_get_target_ext(render_target,this.ptr);
     }
     reset_target() {
         return GMSurface.InternalFunctions.surface_reset_target();
@@ -146,5 +146,4 @@ export default class GMSurface {
     save_part(fname: string, x: number, y: number, width: number, height: number) {
         return GMSurface.InternalFunctions.surface_save_part(this.ptr,fname,x,y,width,height);
     }
-
 }
