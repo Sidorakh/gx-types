@@ -1,16 +1,8 @@
-parts = [
-    "bboxkind_rectangular",bboxkind_rectangular,
-    "bboxkind_ellipse",bboxkind_ellipse,
-    "bboxkind_diamond",bboxkind_diamond,
-    "bboxkind_precise",bboxkind_precise,
-    "bboxkind_spine",bboxkind_spine,
-];
+var arr = gxtypes_test();
 
+map = arr[0];
+buff = arr[1];
+list = arr[2];
+surf = arr[3];
 
-str = "";
-for (var i=0;i<array_length(parts);i+=2) {
-    str += $"{parts[i]}: {parts[i+1]}\n"
-}
-
-//gxtypes_test();
-surf = -1;
+strings = $"Map: {json_encode(map)}\nBuffer: {buffer_get_address(buff)} - {buffer_read(buff,buffer_string)}\nList: {json_encode(list)}";

@@ -19,7 +19,6 @@
     {"$GMExtensionFile":"v1","%Name":"","constants":[],"copyToTargets":-1,"filename":"gx-types.js","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"gxtypes_init","argCount":0,"args":[],"documentation":"","externalName":"gxtypes_init","help":"","hidden":false,"kind":5,"name":"gxtypes_init","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"gxtypes_test","argCount":0,"args":[],"documentation":"","externalName":"gxtypes_test","help":"","hidden":false,"kind":5,"name":"gxtypes_test","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
-        {"$GMExtensionFunction":"","%Name":"gxtypes_test_map","argCount":0,"args":[1,],"documentation":"","externalName":"gxtypes_testmap","help":"","hidden":false,"kind":5,"name":"gxtypes_test_map","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
       ],"init":"gxtypes_init","kind":5,"name":"","origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject":null,
