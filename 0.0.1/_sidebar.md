@@ -7,3 +7,4 @@
 - [GMSurface](GMSurface.md)
 - [GMColor](GMColor.md)
 - [GMAssets](GMAssets.md)
+- [GMSprite](GMSprite.md)

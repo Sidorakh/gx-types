@@ -492,4 +492,81 @@ Returns: number
 
 Wraps [`draw_get_alpha`](https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/draw_get_alpha.htm)
 
+### enable_swf_aa()
+
+`enable_swf_aa(enable: boolean): void`
+
+Arguments: 
+
+| Argument | Type | Description |
+| - | - | - |
+| enable | boolean | Whether SWF AA should be enabled or not |
+Returns: N/A
+
+Wraps [`draw_enable_swf_aa`](https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_enable_swf_aa.htm)
+
+
+### set_swf_aa_level()
+
+`set_swf_aa_level(level: number): void`
+
+Arguments:
+
+| Argument | Type | Description |
+| - | - | - |
+| level | number | AA level to use |
+
+
+Returns: N/A
+
+Wraps [`draw_set_swf_aa_level`](https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_set_swf_aa_level.htm)
+
+### get_swf_aa_level()
+
+`get_swf_aa_level(): number`
+
+Arguments: N/A
+
+Returns: number
+
+Wraps [`draw_get_swf_aa_level`](https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_get_swf_aa_level.htm)
+
+### enable_svg_aa()
+
+`enable_svg_aa(enable: boolean): void`
+
+Arguments:
+| Argument | Type | Description |
+| - | - | - |
+| enable | boolean | Desc |
+
+
+Returns: N/A
+
+Wraps [`draw_enable_svg_aa`](https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_enable_svg_aa.htm)
+
+### set_svg_aa_level()
+
+`set_svg_aa_level(level: number): void`
+
+Arguments:
+
+| Argument | Type | Description |
+| - | - | - |
+| level | number | Desc |
+
+
+Returns: N/A
+
+Wraps [`draw_set_svg_aa_level`](https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_set_svg_aa_level.htm)
+
+### get_svg_aa_level()
+
+`get_svg_aa_level(): number`
+
+Arguments: N/A
+
+Returns: number
+
+Wraps [`draw_get_svg_aa_level`](https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_get_svg_aa_level.htm)
 
